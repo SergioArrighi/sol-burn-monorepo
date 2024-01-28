@@ -2,7 +2,16 @@
   "name": "sol-burn-monorepo",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "nx": "nx",
+    "start": "node dist/packages/sol-burn-bot/main.js",
+    "build": "npm run nx -- build sol-burn-bot",
+    "start:sol-burn-bot": "nx serve sol-burn-bot",
+    "build:sol-burn-bot": "nx build sol-burn-bot",
+    "test:sol-burn-bot": "nx test sol-burn-bot",
+    "lint:sol-burn-bot": "nx lint sol-burn-bot",
+    "e2e:sol-burn-bot": "nx e2e sol-burn-bot"
+  },
   "private": true,
   "devDependencies": {
     "@nestjs/schematics": "^10.0.1",
