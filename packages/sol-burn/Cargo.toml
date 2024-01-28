@@ -16,7 +16,7 @@ tokio = { version = "1.35.1", features = ["macros", "rt-multi-thread"] }
 jito-searcher-client = { path = "./searcher_client" }
 jito-protos = { path = "./jito_protos" }
 spl-token = "4.0.0"
-tonic = "0.8.3"
+tonic = { version = "0.8.3", features = ["tls", "tls-roots"] }
 futures-util = "0.3.30"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
