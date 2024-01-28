@@ -1,0 +1,9 @@
+
+[workspace]
+resolver = '2'
+members = [
+	'packages/sol_burn',
+]
+
+[profile.release]
+lto = true
