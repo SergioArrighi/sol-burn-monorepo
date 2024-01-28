@@ -4,11 +4,10 @@
   "license": "MIT",
   "scripts": {
     "nx": "nx",
-    "start": "node dist/packages/sol-burn-bot/main.js",
-    "build": "npm run nx -- build sol-burn-bot",
     "start:sol-burn-bot": "nx serve sol-burn-bot",
+    "start:sol-burn": "nx run sol_burn:run",
     "build:sol-burn-bot": "nx build sol-burn-bot",
-    "build:sol-burn": "nx build sol-burn",
+    "build:sol-burn": "nx build sol_burn:build",
     "test:sol-burn-bot": "nx test sol-burn-bot",
     "lint:sol-burn-bot": "nx lint sol-burn-bot",
     "e2e:sol-burn-bot": "nx e2e sol-burn-bot"
