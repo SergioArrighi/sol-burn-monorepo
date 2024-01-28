@@ -2,7 +2,7 @@
 [workspace]
 resolver = '2'
 members = [
-	'packages/sol_burn',
+	'packages/sol-burn',
 ]
 
 [profile.release]

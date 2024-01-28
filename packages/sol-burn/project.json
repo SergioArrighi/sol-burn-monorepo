@@ -1,14 +1,14 @@
 {
-  "name": "sol_burn",
+  "name": "sol-burn",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "packages/sol_burn/src",
+  "sourceRoot": "packages/sol-burn/src",
   "targets": {
     "build": {
       "executor": "@monodon/rust:build",
       "outputs": ["{options.target-dir}"],
       "options": {
-        "target-dir": "dist/target/sol_burn"
+        "target-dir": "dist/target/sol-burn"
       },
       "configurations": {
         "production": {
@@ -20,7 +20,7 @@
       "executor": "@monodon/rust:test",
       "outputs": ["{options.target-dir}"],
       "options": {
-        "target-dir": "dist/target/sol_burn"
+        "target-dir": "dist/target/sol-burn"
       },
       "configurations": {
         "production": {
@@ -32,14 +32,14 @@
       "executor": "@monodon/rust:lint",
       "outputs": ["{options.target-dir}"],
       "options": {
-        "target-dir": "dist/target/sol_burn"
+        "target-dir": "dist/target/sol-burn"
       }
     },
     "run": {
       "executor": "@monodon/rust:run",
       "outputs": ["{options.target-dir}"],
       "options": {
-        "target-dir": "dist/target/sol_burn"
+        "target-dir": "dist/target/sol-burn"
       },
       "configurations": {
         "production": {

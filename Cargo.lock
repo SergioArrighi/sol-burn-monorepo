@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "sol_burn"
+name = "sol-burn"
 version = "0.1.0"

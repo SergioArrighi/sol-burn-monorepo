@@ -5,9 +5,9 @@
   "scripts": {
     "nx": "nx",
     "start:sol-burn-bot": "nx serve sol-burn-bot",
-    "start:sol-burn": "nx run sol_burn:run",
+    "start:sol-burn": "nx run sol-burn:run",
     "build:sol-burn-bot": "nx build sol-burn-bot",
-    "build:sol-burn": "nx build sol_burn:build",
+    "build:sol-burn": "nx build sol-burn:build",
     "test:sol-burn-bot": "nx test sol-burn-bot",
     "lint:sol-burn-bot": "nx lint sol-burn-bot",
     "e2e:sol-burn-bot": "nx e2e sol-burn-bot"
