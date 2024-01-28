@@ -1,0 +1,53 @@
+{
+  "name": "sol-burn-bot",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/sol-burn-bot/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/packages/sol-burn-bot",
+        "main": "packages/sol-burn-bot/src/main.ts",
+        "tsConfig": "packages/sol-burn-bot/tsconfig.app.json",
+        "assets": ["packages/sol-burn-bot/src/assets"],
+        "webpackConfig": "packages/sol-burn-bot/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "sol-burn-bot:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "sol-burn-bot:build:development"
+        },
+        "production": {
+          "buildTarget": "sol-burn-bot:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/sol-burn-bot/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
