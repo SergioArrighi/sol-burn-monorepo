@@ -103,8 +103,6 @@ async fn print_packet_stream(
                     .filter_map(versioned_tx_from_packet)
                     .collect();
                 for tx in transactions {
-                    info!("tx sig: {:?}", tx.signatures[0]);
-                    info!("tx {:?}", tx.json_encode());
                     //info!("tx message {:?}", tx.message);
                     let transaction_accounts: Vec<Pubkey> =
                         tx.message.static_account_keys().iter().cloned().collect();
@@ -113,7 +111,37 @@ async fn print_packet_stream(
                             format!("Failed to decode SPL Token instruction: {:?}", e)
                         });
                         if let Ok(token_instruction) = result {
-                            info!("Token ins {:?}", token_instruction);
+                            match token_instruction {
+                                TokenInstruction::InitializeMint { decimals, mint_authority, freeze_authority } => {
+                                    info!("tx sig: {:?}", tx.signatures[0]);
+                                    info!("tx {:?}", tx.json_encode());
+                                    info!("Token ins {:?}", token_instruction);
+                                }
+                                TokenInstruction::InitializeAccount => {},
+                                TokenInstruction::InitializeMultisig { m } => {},
+                                TokenInstruction::Transfer { amount } => {},
+                                TokenInstruction::Approve { amount } => {},
+                                TokenInstruction::Revoke => {},
+                                TokenInstruction::SetAuthority { authority_type, new_authority } => {},
+                                TokenInstruction::MintTo { amount } => {},
+                                TokenInstruction::Burn { amount } => {},
+                                TokenInstruction::CloseAccount => {},
+                                TokenInstruction::FreezeAccount => {},
+                                TokenInstruction::ThawAccount => {},
+                                TokenInstruction::TransferChecked { amount, decimals } => {},
+                                TokenInstruction::ApproveChecked { amount, decimals } => {},
+                                TokenInstruction::MintToChecked { amount, decimals } => {},
+                                TokenInstruction::BurnChecked { amount, decimals } => {},
+                                TokenInstruction::InitializeAccount2 { owner } => {},
+                                TokenInstruction::SyncNative => {},
+                                TokenInstruction::InitializeAccount3 { owner } => {},
+                                TokenInstruction::InitializeMultisig2 { m } => {},
+                                TokenInstruction::InitializeMint2 { decimals, mint_authority, freeze_authority } => {},
+                                TokenInstruction::GetAccountDataSize => {},
+                                TokenInstruction::InitializeImmutableOwner => {},
+                                TokenInstruction::AmountToUiAmount { amount } => {},
+                                TokenInstruction::UiAmountToAmount { ui_amount } => {},
+                            }
                         }
                         /*
                         let accounts: Vec<_> = instruction
